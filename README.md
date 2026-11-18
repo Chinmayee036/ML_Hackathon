@@ -32,3 +32,11 @@ For the API: `from pathsnap.candidates import build_trip; df, info, net, tr = bu
 - **Reference route unreliable for train trips 00000033 and 00000054** (GPS is on roads, but the route is 100+ m away through the middle of the trip; start/end match). Flagged `align_ok=False`; exclude from training and from reported metrics, and say so in the report.
 - Reverse-direction arcs have identical geometry, so pure distance ties; the nearest-road baseline needs a heading tie-break (otherwise ~50%).
 - Some reference routes have non-contiguous consecutive arcs (e.g. trip 00000002, 99.6%).
+
+## Large data file (candidates_train)
+
+`candidates_train.csv.gz` (128 MB) is over GitHub's 100 MB limit, so it is stored as split 7z parts in `outputs/candidates_train_parts/`.
+
+To get the file: keep `candidates_train.7z.001` and `candidates_train.7z.002` in the same folder, then extract `.001` with 7-Zip. You get `candidates_train.csv.gz` (127,954,350 bytes, SHA256 `9b75a32e0289d722ac4ee0f923f27390e9c6ed681c365726088d0f93dd7c7631`).
+
+Command line: `7z x outputs/candidates_train_parts/candidates_train.7z.001 -ooutputs`
