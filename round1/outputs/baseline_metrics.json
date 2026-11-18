@@ -1,0 +1,9 @@
+{
+  "train_trips": 80,
+  "student_test_trips": 10,
+  "training_candidate_rows": 1600007,
+  "student_test_observations": 19160,
+  "candidate_miss_rate": 0.002139874739039649,
+  "nearest_road_top1": 0.8182150313152401,
+  "logistic_regression_top1": 0.8415970772442589
+}
