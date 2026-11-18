@@ -9,7 +9,7 @@ python scripts/03_folium_map.py     --root "<path>/Student folder" --partition t
 python scripts/04_radius_sweep.py   --root "<path>/Student folder"   # -> outputs/radius_sweep.csv
 ```
 
-## Method (what to explain in viva)
+## Method
 1. **Projection**: per-trip equirectangular projection to metres (`pathsnap/geo.py`); degrees are never used as distance.
 2. **Candidates**: each directed arc is densified (20 m samples) into a KD-tree; for each GPS fix take arcs within 50 m (grow radius if <3), keep the 10 closest by exact point-to-segment distance. Reverse-direction arcs are separate candidates.
 3. **Reference alignment** (`pathsnap/align.py`): `.track` and `.route` rows do not correspond. We find a monotone map obs -> position on the ordered route minimising sum of (clipped) point-to-arc distance, with a small skip penalty (DP, O(N*M)). Label = aligned route arc id.
