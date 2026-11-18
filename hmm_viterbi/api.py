@@ -1,4 +1,4 @@
-"""Local FastAPI entry point for the Task 3 integration demo."""
+"""Local FastAPI entry point for the HMM and Viterbi route reconstruction."""
 
 from functools import lru_cache
 import os
@@ -7,10 +7,10 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from task3.demo import predict_demo
-from task3.pipeline import LogisticScorer, ROOT, predict_trip
+from hmm_viterbi.demo import predict_demo
+from hmm_viterbi.pipeline import LogisticScorer, ROOT, predict_trip
 
-app = FastAPI(title="PathSnap Task 3")
+app = FastAPI(title="PathSnap HMM and Viterbi")
 TRIPS = Path(os.environ.get("PATHSNAP_TRIPS", ROOT / "Student folder/Student folder/student_test"))
 MODEL = Path(os.environ.get("PATHSNAP_MODEL", ROOT / "round1/outputs/logistic_baseline.npz"))
 UI_ORIGIN = os.environ.get("PATHSNAP_UI_ORIGIN")

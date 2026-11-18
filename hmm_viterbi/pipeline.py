@@ -10,7 +10,7 @@ import numpy as np
 
 from round1.pathsnap.align import align_to_route
 from round1.pathsnap.candidates import build_trip
-from task3.decoder import decode
+from hmm_viterbi.decoder import decode
 
 
 ROOT = Path(__file__).resolve().parents[1]

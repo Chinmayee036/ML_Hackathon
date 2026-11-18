@@ -3,7 +3,7 @@
 import csv
 from pathlib import Path
 
-from task3.pipeline import LogisticScorer, ROOT, predict_trip
+from hmm_viterbi.pipeline import LogisticScorer, ROOT, predict_trip
 
 
 def main():

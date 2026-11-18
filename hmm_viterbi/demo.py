@@ -3,7 +3,7 @@
 import json
 from math import inf
 
-from task3.decoder import decode
+from hmm_viterbi.decoder import decode
 
 
 def predict_demo() -> dict:

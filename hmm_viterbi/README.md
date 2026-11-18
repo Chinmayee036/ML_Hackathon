@@ -1,15 +1,15 @@
-# PathSnap Task 3
+# PathSnap HMM and Viterbi
 
 Run these commands from the workspace root using a Python environment with
 NumPy, pandas, FastAPI, and Uvicorn.
 
 ```powershell
-python -m pip install -r task3/requirements.txt
-python -m task3.evaluate
-python -m uvicorn task3.api:app --host 0.0.0.0 --port 8000
+python -m pip install -r hmm_viterbi/requirements.txt
+python -m hmm_viterbi.evaluate
+python -m uvicorn hmm_viterbi.api:app --host 0.0.0.0 --port 8000
 ```
 
-The evaluation writes per-trip metrics to `task3/student_test_results.csv`.
+The evaluation writes per-trip metrics to `hmm_viterbi/student_test_results.csv`.
 On 19,160 GPS observations the logistic classifier matched 84.16% of the
 aligned reference arcs, and Viterbi matched 90.91%. The share of consecutive
 pairs accepted by the transition rule went from 93.62% to 99.95%.
